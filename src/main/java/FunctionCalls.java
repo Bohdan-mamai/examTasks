@@ -1,5 +1,5 @@
-import tasks.FindMode;
 import tasks.FirstTask;
+import tasks.EQSolver;
 import tasks.SearchAlgorithm;
 
 import java.util.Scanner;
@@ -31,6 +31,10 @@ public class FunctionCalls {
             case 2:
                 SearchAlgorithm searchAlgorithm = new SearchAlgorithm();
                 searchAlgorithm.searchNumber();
+                break;
+            case 3:
+                EQSolver EQSolver = new EQSolver();
+                EQSolver.calculateSqrt();
                 break;
         }
     }
