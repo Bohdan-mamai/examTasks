@@ -1,14 +1,18 @@
 package tasks;
 
-public class EQSolver {
-    double a = 5;
-    double b = 8;
-    double c = 1;
-    double discriminant = (b * b - 4 * a * c);
-    double oneRoot = (-b / 2*a);
+import java.text.DecimalFormat;
 
-    double x1;
-    double x2;
+public class EQSolver {
+    private double a = 5;
+    private double b = 8;
+    private double c = 1;
+    private double discriminant = (b * b - 4 * a * c);
+    private double oneRoot = (-b / 2*a);
+
+    private double x1;
+    private double x2;
+
+    DecimalFormat df = new DecimalFormat("#.##");
 
     public void calculateSqrt() {
         if (discriminant < 0 ){
@@ -19,8 +23,8 @@ public class EQSolver {
         } else {
             x1 = (-b - Math.sqrt(discriminant)) / (2 * a);
             x2 = (-b + Math.sqrt(discriminant)) / (2 * a);
-            System.out.println(x1);
-            System.out.println(x2);
+            System.out.println(df.format(x1));
+            System.out.println(df.format(x2));
         }
     }
 }

@@ -1,6 +1,6 @@
 package tasks;
 
-public class FirstTask {
+public class PrimeNumbers {
     private long i = 10;
     private long j = 50000;
 

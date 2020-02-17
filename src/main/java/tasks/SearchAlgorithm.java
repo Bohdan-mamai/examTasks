@@ -16,9 +16,9 @@ public class SearchAlgorithm {
     }
 
     public void searchNumber() {
-        int[] arrayWithRandomDigits = {123, 214, 354, 324, 464, 2124, 12, 154, 768, 235};
-        for (int i = 0; i < arrayWithRandomDigits.length; i++) {
-            System.out.print(" " + arrayWithRandomDigits[i]);
+        int[] arrayWithRandomDigits = {158, 207, 392, 62, 315, 434, 487, 268, 405, 241};
+        for (int arrayWithRandomDigit : arrayWithRandomDigits) {
+            System.out.print(" " + arrayWithRandomDigit);
         }
 
         System.out.println("\nEnter your number: ");

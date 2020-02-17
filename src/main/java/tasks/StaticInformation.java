@@ -3,32 +3,58 @@ package tasks;
 import java.util.Arrays;
 
 public class StaticInformation {
-    public static double mean(int[] array) {
+
+    int[] arrayWithRandomDigits = {206, 430, 73, 30, 293, 322, 42, 36, 447, 229};
+    int arrayLenght = arrayWithRandomDigits.length;
+
+    public double mean() {
         double aritmeticMean = 0;
-        for (int i = 0; i < array.length; i++) {
-            aritmeticMean += array[i];
+        for (int i = 0; i < arrayLenght; i++) {
+            aritmeticMean += arrayWithRandomDigits[i];
         }
-        aritmeticMean /= array.length;
+        aritmeticMean /= arrayLenght;
+        System.out.println("Mean = " + aritmeticMean);
         return aritmeticMean;
     }
 
-    public static double median(int[] array){
-        Arrays.sort(array);
+    public void median(){
+        Arrays.sort(arrayWithRandomDigits);
         double median;
-        if (array.length % 2 == 0) {
-            median = ((double) array[array.length / 2] + (double) array[array.length / 2 - 1]) / 2;
+        if (arrayLenght % 2 == 0) {
+            median = ((double) arrayWithRandomDigits[arrayLenght / 2] + (double) arrayWithRandomDigits[arrayLenght / 2 - 1]) / 2;
         } else {
-            median = array[array.length / 2];
+            median = arrayWithRandomDigits[arrayLenght / 2];
         }
-        return median;
+        System.out.println("Median = " + median);
     }
 
-    public static void initArray() {
-        int[] arrayWithRandomDigits = {123, 214, 354, 324, 464, 2124, 12, 154, 768, 235};
-        for (int i = 0; i < arrayWithRandomDigits.length; i++) {
-            System.out.print(" " + arrayWithRandomDigits[i]);
+    public void mode() {
+        int mode = arrayWithRandomDigits[0];
+        int maxCount = 0;
+        for (int i = 0; i < arrayLenght; i++) {
+            int value = arrayWithRandomDigits[i];
+            int count = 1;
+            for (int j = 0; j < arrayLenght; j++) {
+                if (arrayWithRandomDigits[j] == value) count++;
+                if (count > maxCount) {
+                    mode = value;
+                    maxCount = count;
+                }
+            }
         }
-        System.out.println("\n Mean: " + mean(arrayWithRandomDigits));
-        System.out.println("\n Median: " + median(arrayWithRandomDigits));
+        System.out.println("Mode = " + mode);
     }
+
+    public void standartDeviation(){
+        int elements;
+        double sumElemets = 0;
+        double mean = mean();
+        for (int i = 0; i<arrayLenght; i++){
+            elements = arrayWithRandomDigits[i];
+            sumElemets = elements - mean;
+        }
+        double standartDeviation = Math.sqrt((sumElemets*sumElemets)/(arrayLenght-1));
+        System.out.println(standartDeviation);
+    }
+
 }
