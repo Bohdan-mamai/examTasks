@@ -6,6 +6,8 @@ public class PrimeNumbers {
 
     public void primeNumbers() {
 
+        System.out.println("Prime numbers from 1 to " + j + ":");
+
         System.out.println(1);
         System.out.println(2);
         System.out.println(3);

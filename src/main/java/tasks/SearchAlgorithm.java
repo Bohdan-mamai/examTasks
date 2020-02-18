@@ -4,15 +4,14 @@ import java.util.Scanner;
 
 public class SearchAlgorithm {
 
-    public static int initArray(int[] inputArray, int number) {
+    private static int initArray(int[] inputArray, int number) {
 
         for (int i = 0; i < inputArray.length; i++) {
             if (inputArray[i] == number) {
                 return i;
             }
         }
-        return -1;
-
+        return 0;
     }
 
     public void searchNumber() {
@@ -21,13 +20,12 @@ public class SearchAlgorithm {
             System.out.print(" " + arrayWithRandomDigit);
         }
 
-        System.out.println("\nEnter your number: ");
+        System.out.println("\nEnter your  which you want to find from array: ");
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
 
         int result = initArray(arrayWithRandomDigits,number);
         System.out.println( (result != -1) ? "Required number: " + number + " found at index: " + result : "Number " + number + " not found");
-
     }
 }
 

@@ -15,6 +15,7 @@ public class EQSolver {
     DecimalFormat df = new DecimalFormat("#.##");
 
     public void calculateSqrt() {
+        System.out.println("a = " + a + "; " + "b = " + b + "; " + "c = " + c);
         if (discriminant < 0 ){
             System.out.println("There is no solution");
         } else if ( discriminant == 0.0){
@@ -23,8 +24,8 @@ public class EQSolver {
         } else {
             x1 = (-b - Math.sqrt(discriminant)) / (2 * a);
             x2 = (-b + Math.sqrt(discriminant)) / (2 * a);
-            System.out.println(df.format(x1));
-            System.out.println(df.format(x2));
+            System.out.println("x1 = " + df.format(x1));
+            System.out.println("x2 = " + df.format(x2));
         }
     }
 }

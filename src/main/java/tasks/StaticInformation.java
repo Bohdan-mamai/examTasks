@@ -7,17 +7,18 @@ public class StaticInformation {
     int[] arrayWithRandomDigits = {206, 430, 73, 30, 293, 322, 42, 36, 447, 229};
     int arrayLenght = arrayWithRandomDigits.length;
 
-    public double mean() {
+    public void mean() {
+        print();
         double aritmeticMean = 0;
         for (int i = 0; i < arrayLenght; i++) {
             aritmeticMean += arrayWithRandomDigits[i];
         }
         aritmeticMean /= arrayLenght;
-        System.out.println("Mean = " + aritmeticMean);
-        return aritmeticMean;
+        System.out.println("\nMean = " + aritmeticMean);
     }
 
     public void median(){
+        print();
         Arrays.sort(arrayWithRandomDigits);
         double median;
         if (arrayLenght % 2 == 0) {
@@ -25,10 +26,11 @@ public class StaticInformation {
         } else {
             median = arrayWithRandomDigits[arrayLenght / 2];
         }
-        System.out.println("Median = " + median);
+        System.out.println("\nMedian = " + median);
     }
 
     public void mode() {
+        print();
         int mode = arrayWithRandomDigits[0];
         int maxCount = 0;
         for (int i = 0; i < arrayLenght; i++) {
@@ -42,19 +44,29 @@ public class StaticInformation {
                 }
             }
         }
-        System.out.println("Mode = " + mode);
+        System.out.println("\nMode = " + mode);
     }
 
     public void standartDeviation(){
+        print();
         int elements;
         double sumElemets = 0;
-        double mean = mean();
+        double mean = 0;
+        for (int i = 0; i < arrayLenght; i++) {
+            mean += arrayWithRandomDigits[i];
+        }
+        mean /= arrayLenght;
         for (int i = 0; i<arrayLenght; i++){
             elements = arrayWithRandomDigits[i];
             sumElemets = elements - mean;
         }
         double standartDeviation = Math.sqrt((sumElemets*sumElemets)/(arrayLenght-1));
-        System.out.println(standartDeviation);
+        System.out.println("\nStandart Deviation = " + standartDeviation);
     }
 
+    private void print(){
+        for (int i = 0; i < arrayLenght; i++) {
+            System.out.print(arrayWithRandomDigits[i] + " ");
+        }
+    }
 }

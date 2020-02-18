@@ -1,6 +1,4 @@
-package tasks;
-
-import tasks.employee.Employee;
+package tasks.employee;
 
 public class Main {
     public static void main(String[] args) {
