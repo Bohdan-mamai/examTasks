@@ -1,7 +1,7 @@
 package tasks.employee;
 
-public class Main {
-    public static void main(String[] args) {
+public class TestEmployee {
+    public void createEmpoyees() {
         Employee employee = new Employee("Homer", "Simson");
         Employee employee1 = new Employee();
 
