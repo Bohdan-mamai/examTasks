@@ -6,4 +6,5 @@ public class CallDeck {
         deck.initiateDeck();
         deck.displayCards();
     }
+
 }

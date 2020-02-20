@@ -11,7 +11,7 @@ public class SearchAlgorithm {
                 return i;
             }
         }
-        return 0;
+        return -1;
     }
 
     public void searchNumber() {
@@ -20,7 +20,7 @@ public class SearchAlgorithm {
             System.out.print(" " + arrayWithRandomDigit);
         }
 
-        System.out.println("\nEnter your  which you want to find from array: ");
+        System.out.println("\nEnter your number which you want to find from array: ");
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
 

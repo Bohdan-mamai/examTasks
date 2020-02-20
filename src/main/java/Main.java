@@ -1,6 +1,6 @@
 import tasks.*;
 
-public class FunctionCalls {
+public class Main {
 
     public static void main(String[] args) {
         Menu.displayMenu();

@@ -8,82 +8,98 @@ import java.util.Scanner;
 public class Menu {
 
     public static void displayMenu(){
-        System.out.println("Enter a number of task which you want to play.");
-        System.out.println("1. eqSolver");
-        System.out.println("2. Prime Numbers");
-        System.out.println("3. Calendar");
-        System.out.println("4. Convert number to word");
-        System.out.println("5. Search algorithm");
-        System.out.println("6. Calculate Mean");
-        System.out.println("7. Calculate Median");
-        System.out.println("8. Calculate Mode");
-        System.out.println("9. Calculate Deviation");
-        System.out.println("10. Bubble Sort Descending");
-        System.out.println("11. Bubble Sort Ascending");
-        System.out.println("12. Accounting");
-        System.out.println("13. Display deck of cards");
-        System.out.println("14. Create employee");
+        System.out.println("Enter a number of task which you want to play." +
+                "\n1. eqSolver" +
+                "\n2. Prime Numbers" +
+                "\n3. Calendar" +
+                "\n4. Convert number to word" +
+                "\n5. Search algorithm" +
+                "\n6. Calculate Mean" +
+                "\n7. Calculate Median" +
+                "\n8. Calculate Mode" +
+                "\n9. Calculate Deviation" +
+                "\n10. Bubble Sort Descending" +
+                "\n11. Bubble Sort Ascending" +
+                "\n12. Accounting" +
+                "\n13. Display deck of cards" +
+                "\n14. Create employee");
 
-    Scanner sc = new Scanner(System.in);
-    int key = sc.nextInt();
-
-        switch (key) {
-        case 1:
-            EQSolver eqSolver = new EQSolver();
-            eqSolver.calculateSqrt();
-            break;
-        case 2:
-            PrimeNumbers primeNumbers = new PrimeNumbers();
-            primeNumbers.primeNumbers();
-            break;
-        case 3:
-            Calendar calendar = new Calendar();
-            calendar.printYear();
-            break;
-        case 4:
-            ConvertNumberToWord convertNumberToWord = new ConvertNumberToWord();
-            convertNumberToWord.converter();
-            break;
-        case 5:
-            SearchAlgorithm searchAlgorithm = new SearchAlgorithm();
-            searchAlgorithm.searchNumber();
-            break;
-        case 6:
-            StaticInformation calculateMean = new StaticInformation();
-            calculateMean.mean();
-            break;
-        case 7:
-            StaticInformation calculateMedian = new StaticInformation();
-            calculateMedian.median();
-            break;
-        case 8:
-            StaticInformation calculateMode = new StaticInformation();
-            calculateMode.mode();
-            break;
-        case 9:
-            StaticInformation calculateDeviation = new StaticInformation();
-            calculateDeviation.standartDeviation();
-            break;
-        case 10:
-            BubbleSort bubbleSortDescending = new BubbleSort();
-            bubbleSortDescending.bubbleSortAlgorithmDescending();
-            break;
-        case 11:
-            BubbleSort bubbleSortAscending = new BubbleSort();
-            bubbleSortAscending.bubbleSortAlgorithmAscending();
-            break;
-        case 12:
-            Accounting accounting = new Accounting();
-            accounting.calculateSalary();
-            break;
-        case 13:
-            CallDeck callDeck = new CallDeck();
-            callDeck.displayFullDeck();
-            break;
-        case 14:
-            TestEmployee testEmployee = new TestEmployee();
-            testEmployee.createEmpoyees();
-            break;
+        switch (inputDataAndValidation()) {
+                case 1:
+                    EQSolver eqSolver = new EQSolver();
+                    eqSolver.calculateSqrt();
+                    break;
+                case 2:
+                    PrimeNumbers primeNumbers = new PrimeNumbers();
+                    primeNumbers.primeNumbers();
+                    break;
+                case 3:
+                    Calendar calendar = new Calendar();
+                    calendar.printYear();
+                    break;
+                case 4:
+                    ConvertNumberToWord convertNumberToWord = new ConvertNumberToWord();
+                    convertNumberToWord.converter();
+                    break;
+                case 5:
+                    SearchAlgorithm searchAlgorithm = new SearchAlgorithm();
+                    searchAlgorithm.searchNumber();
+                    break;
+                case 6:
+                    StaticInformation calculateMean = new StaticInformation();
+                    calculateMean.mean();
+                    break;
+                case 7:
+                    StaticInformation calculateMedian = new StaticInformation();
+                    calculateMedian.median();
+                    break;
+                case 8:
+                    StaticInformation calculateMode = new StaticInformation();
+                    calculateMode.mode();
+                    break;
+                case 9:
+                    StaticInformation calculateDeviation = new StaticInformation();
+                    calculateDeviation.standartDeviation();
+                    break;
+                case 10:
+                    BubbleSort bubbleSortDescending = new BubbleSort();
+                    bubbleSortDescending.bubbleSortAlgorithmDescending();
+                    break;
+                case 11:
+                    BubbleSort bubbleSortAscending = new BubbleSort();
+                    bubbleSortAscending.bubbleSortAlgorithmAscending();
+                    break;
+                case 12:
+                    Accounting accounting = new Accounting();
+                    accounting.calculateSalary();
+                    break;
+                case 13:
+                    CallDeck callDeck = new CallDeck();
+                    callDeck.displayFullDeck();
+                    break;
+                case 14:
+                    TestEmployee testEmployee = new TestEmployee();
+                    testEmployee.createEmpoyees();
+                    break;
+            }
     }
-}
+
+    public static int inputDataAndValidation(){
+        Scanner sc = new Scanner(System.in);
+        String regex = "\\d+";
+        String inputData = sc.nextLine();
+        boolean numbers = inputData.matches(regex);
+        while(!numbers){
+            System.out.println("Please enter a number.");
+            inputData = sc.nextLine();
+            numbers = inputData.matches(regex);
+        }
+        int key = Integer.parseInt(inputData);
+        while(key < 1 || key > 14 )
+        {
+            System.out.println("Please enter valid number from 1 to 14.");
+            key = Integer.parseInt(sc.nextLine());
+        }
+        return key;
+    }
 }
