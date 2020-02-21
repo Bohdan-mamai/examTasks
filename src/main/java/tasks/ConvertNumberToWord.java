@@ -3,14 +3,14 @@ package tasks;
 import java.text.NumberFormat;
 import java.util.Scanner;
 
-public class ConvertNumberToWord {
+class ConvertNumberToWord {
 
-    public static String[] units = {"", "One", "Two", "Three", "Four",
+    private static String[] units = {"", "One", "Two", "Three", "Four",
             "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve",
             "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen",
             "Eighteen", "Nineteen"};
 
-    public static String[] tens = {
+    private static String[] tens = {
             "",
             "",
             "Twenty",
@@ -23,7 +23,7 @@ public class ConvertNumberToWord {
             "Ninety"
     };
 
-    public static String convert(int n) {
+    private static String convert(int n) {
         if (n < 0) {
             return "Minus " + convert(-n);
         }
@@ -50,12 +50,24 @@ public class ConvertNumberToWord {
         return convert(n / 1000000) + " Million" + ((n % 1000000 != 0) ? " " : "") + convert(n % 1000000);
     }
 
-    public void converter() {
+    private static String inputDataAndValidation() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a number to convert: ");
-        int n = sc.nextInt();
-//            for (int n = 10; n < 150; n++) {
-        System.out.println(NumberFormat.getInstance().format(n) + " = " + convert(n));
-//           }
+        String regex = "-?\\d+";
+        String inputData = sc.nextLine();
+        boolean isNumbers = inputData.matches(regex);
+        while (!isNumbers) {
+            System.out.println("Please enter a number.");
+            inputData = sc.nextLine();
+            isNumbers = inputData.matches(regex);
+        }
+        return inputData;
+    }
+
+    void converter() {
+        int number = Integer.parseInt(inputDataAndValidation());
+           // for (int n = 10; n < 150; n++) {
+        System.out.println(NumberFormat.getInstance().format(number) + " = " + convert(number));
+           // }
     }
 }

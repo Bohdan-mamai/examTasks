@@ -7,6 +7,19 @@ public class Employee {
     private String surname;
     private int id;
 
+    Employee(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
+        int random = new Random().nextInt();
+        id = random < 0 ? -random : random;
+    }
+
+    Employee() {
+        int random = new Random().nextInt();
+        if (random < 0) id = -random;
+        else id = random;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -19,19 +32,7 @@ public class Employee {
         this.id = id;
     }
 
-    public Employee(String name,String surname){
-        this.name = name;
-        this.surname = surname;
-        int random = new Random().nextInt();
-        id = random < 0 ? -random : random;
-    }
-
-    public Employee(){
-        int random = new Random().nextInt();
-        id = random < 0 ? -random : random;
-    }
-
-    public void print(){
+    void print() {
         System.out.println("name='" + name + '\'' + ", surname='" + surname + '\'' + ", id=" + id);
     }
 

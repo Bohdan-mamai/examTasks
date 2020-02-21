@@ -2,23 +2,22 @@ package tasks;
 
 import java.text.DecimalFormat;
 
-public class EQSolver {
-    private double a = 5;
-    private double b = 8;
-    private double c = 1;
-    private double discriminant = (b * b - 4 * a * c);
-    private double oneRoot = (-b / 2*a);
+class EQSolver {
 
+    private DecimalFormat df = new DecimalFormat("#.##");
+    private double a = 2;
+    private double b = 10;
+    private double c = 6;
+    private double discriminant = (b * b - 4 * a * c);
+    private double oneRoot = (-b / 2 * a);
     private double x1;
     private double x2;
 
-    DecimalFormat df = new DecimalFormat("#.##");
-
-    public void calculateSqrt() {
+    void calculateSqrt() {
         System.out.println("a = " + a + "; " + "b = " + b + "; " + "c = " + c);
-        if (discriminant < 0 ){
+        if (discriminant < 0) {
             System.out.println("There is no solution");
-        } else if ( discriminant == 0.0){
+        } else if (discriminant == 0.0) {
             System.out.println("There is only one solution");
             System.out.println(oneRoot);
         } else {
@@ -28,4 +27,5 @@ public class EQSolver {
             System.out.println("x2 = " + df.format(x2));
         }
     }
+
 }

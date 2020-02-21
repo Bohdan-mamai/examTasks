@@ -4,7 +4,7 @@ public class CartFromTheDeck {
     private String rank;
     private String suit;
 
-    public CartFromTheDeck(String rank, String suit){
+    CartFromTheDeck(String rank, String suit) {
         this.rank = rank;
         this.suit = suit;
     }
@@ -25,7 +25,7 @@ public class CartFromTheDeck {
         this.suit = suit;
     }
 
-    public String toString(){
+    public String toString() {
         return this.rank + " of " + this.suit;
     }
 }

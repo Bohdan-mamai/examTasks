@@ -1,4 +1,4 @@
-import tasks.*;
+import tasks.Menu;
 
 public class Main {
 

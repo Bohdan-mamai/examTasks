@@ -2,22 +2,22 @@ package tasks;
 
 import java.util.Arrays;
 
-public class StaticInformation {
+class StaticInformation {
 
-    int[] arrayWithRandomDigits = {206, 430, 73, 30, 293, 322, 42, 36, 447, 229};
-    int arrayLenght = arrayWithRandomDigits.length;
+    private int[] arrayWithRandomDigits = {206, 430, 73, 30, 293, 322, 42, 36, 447, 229};
+    private int arrayLenght = arrayWithRandomDigits.length;
 
-    public void mean() {
+    void mean() {
         print();
-        double aritmeticMean = 0;
+        double arithmeticMean = 0;
         for (int i = 0; i < arrayLenght; i++) {
-            aritmeticMean += arrayWithRandomDigits[i];
+            arithmeticMean += arrayWithRandomDigits[i];
         }
-        aritmeticMean /= arrayLenght;
-        System.out.println("\nMean = " + aritmeticMean);
+        arithmeticMean /= arrayLenght;
+        System.out.println("\nMean = " + arithmeticMean);
     }
 
-    public void median(){
+    void median() {
         print();
         Arrays.sort(arrayWithRandomDigits);
         double median;
@@ -29,7 +29,7 @@ public class StaticInformation {
         System.out.println("\nMedian = " + median);
     }
 
-    public void mode() {
+    void mode() {
         print();
         int mode = arrayWithRandomDigits[0];
         int maxCount = 0;
@@ -47,24 +47,24 @@ public class StaticInformation {
         System.out.println("\nMode = " + mode);
     }
 
-    public void standartDeviation(){
+    void standardDeviation() {
         print();
         int elements;
-        double sumElemets = 0;
+        double sumElements = 0;
         double mean = 0;
         for (int i = 0; i < arrayLenght; i++) {
             mean += arrayWithRandomDigits[i];
         }
         mean /= arrayLenght;
-        for (int i = 0; i<arrayLenght; i++){
+        for (int i = 0; i < arrayLenght; i++) {
             elements = arrayWithRandomDigits[i];
-            sumElemets = elements - mean;
+            sumElements = elements - mean;
         }
-        double standartDeviation = Math.sqrt((sumElemets*sumElemets)/(arrayLenght-1));
-        System.out.println("\nStandart Deviation = " + standartDeviation);
+        double standardDeviation = Math.sqrt((sumElements * sumElements) / (arrayLenght - 1));
+        System.out.println("\nStandard Deviation = " + String.format("%.2f", standardDeviation));
     }
 
-    private void print(){
+    private void print() {
         for (int i = 0; i < arrayLenght; i++) {
             System.out.print(arrayWithRandomDigits[i] + " ");
         }

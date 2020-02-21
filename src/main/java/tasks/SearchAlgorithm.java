@@ -2,7 +2,7 @@ package tasks;
 
 import java.util.Scanner;
 
-public class SearchAlgorithm {
+class SearchAlgorithm {
 
     private static int initArray(int[] inputArray, int number) {
 
@@ -14,7 +14,7 @@ public class SearchAlgorithm {
         return -1;
     }
 
-    public void searchNumber() {
+    void searchNumber() {
         int[] arrayWithRandomDigits = {158, 207, 392, 62, 315, 434, 487, 268, 405, 241};
         for (int arrayWithRandomDigit : arrayWithRandomDigits) {
             System.out.print(" " + arrayWithRandomDigit);
@@ -24,8 +24,8 @@ public class SearchAlgorithm {
         Scanner scanner = new Scanner(System.in);
         int number = scanner.nextInt();
 
-        int result = initArray(arrayWithRandomDigits,number);
-        System.out.println( (result != -1) ? "Required number: " + number + " found at index: " + result : "Number " + number + " not found");
+        int result = initArray(arrayWithRandomDigits, number);
+        System.out.println((result != -1) ? "Required number: " + number + " found at index: " + result : "Number " + number + " not found");
     }
 }
 
